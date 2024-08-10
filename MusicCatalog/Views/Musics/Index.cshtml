@@ -1,0 +1,25 @@
+@model IEnumerable<MusicCatalog.Models.Music>
+
+<h2>Music Catalog</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Release Date</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Artist</td>
+                <td>@item.ReleaseDate.ToShortDateString()</td>
+                <td>@item.Genre</td>
+            </tr>
+        }
+    </tbody>
+</table>
